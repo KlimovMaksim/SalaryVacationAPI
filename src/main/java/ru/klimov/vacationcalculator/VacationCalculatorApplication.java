@@ -41,7 +41,7 @@ class VacationCalculatorController {
         }
     }
 
-    private long calculateWorkingDays(LocalDate startDate, LocalDate endDate) {
+    long calculateWorkingDays(LocalDate startDate, LocalDate endDate) {
         long workingDays = 0;
         LocalDate date = startDate;
         while (!date.isAfter(endDate)) {
@@ -54,7 +54,7 @@ class VacationCalculatorController {
         return workingDays;
     }
 
-    private boolean isWorkingDay(LocalDate date) {
+    boolean isWorkingDay(LocalDate date) {
         DayOfWeek dayOfWeek = date.getDayOfWeek();
         return dayOfWeek != DayOfWeek.SATURDAY && dayOfWeek != DayOfWeek.SUNDAY;
     }
